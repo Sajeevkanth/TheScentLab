@@ -1,0 +1,120 @@
+.profile-page {
+    padding: 3rem 0;
+    background: #fafafa;
+    min-height: 80vh;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.profile-email {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.order-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-id {
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.order-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.order-status {
+    text-transform: capitalize;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-pending {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.status-processing {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.status-shipped {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.status-delivered {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.order-items {
+    margin-bottom: 1rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+    font-weight: bold;
+}
+
+.order-total {
+    font-size: 1.2rem;
+}
+
+.no-orders {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}

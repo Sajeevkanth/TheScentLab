@@ -1,49 +1,47 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../services/CartContext';
+import { useAuth } from '../services/AuthContext';
 import './Navbar.css';
 
 const Navbar = () => {
-    const location = useLocation();
     const { cartCount } = useCart();
+    const { user, logout } = useAuth();
+    const navigate = useNavigate();
 
-    const isActive = (path) => location.pathname === path;
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    };
 
     return (
         <nav className="navbar">
-            <div className="container navbar-inner">
-                <Link to="/" className="logo">
-                    The Scent <span>Lab</span>
+            <div className="container navbar-content">
+                <Link to="/" className="navbar-logo">
+                    The Scent Lab
                 </Link>
 
-                <ul className="nav-links">
-                    <li>
-                        <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/products" className={`nav-link ${isActive('/products') ? 'active' : ''}`}>
-                            Fragrances
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/recommend" className={`nav-link ${isActive('/recommend') ? 'active' : ''}`}>
-                            Find Your Scent
-                        </Link>
-                    </li>
-                </ul>
+                <div className="navbar-links">
+                    <Link to="/products">Collection</Link>
+                    <Link to="/recommend">Find My Scent</Link>
+                </div>
 
-                <div className="nav-actions">
-                    <Link to="/cart" className="cart-btn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-                            <line x1="3" y1="6" x2="21" y2="6" />
-                            <path d="M16 10a4 4 0 01-8 0" />
-                        </svg>
-                        {cartCount > 0 && (
-                            <span className="cart-count badge">{cartCount}</span>
-                        )}
+                <div className="navbar-actions">
+                    {user ? (
+                        <Link to="/profile" className="nav-icon-btn profile-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </Link>
+                    ) : (
+                        <Link to="/login" className="navbar-login">
+                            Login
+                        </Link>
+                    )}
+
+                    <Link to="/cart" className="navbar-cart">
+                        Cart ({cartCount})
                     </Link>
                 </div>
             </div>
