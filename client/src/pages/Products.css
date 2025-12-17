@@ -1,0 +1,91 @@
+.products-page {
+    padding: 1rem 0;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+}
+
+.products-title-section {
+    flex: 1;
+}
+
+.products-subtitle {
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+.scent-filter-container {
+    margin-bottom: 1rem;
+}
+
+.products-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.products-search {
+    flex: 1;
+    min-width: 200px;
+}
+
+.products-filter-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.products-filter-group .form-input {
+    min-width: 120px;
+}
+
+.products-grid {
+    margin-top: 1rem;
+}
+
+.products-loading {
+    margin-top: 1rem;
+}
+
+.product-skeleton {
+    background: #eee;
+    border-radius: 4px;
+    aspect-ratio: 3/4;
+}
+
+.products-empty {
+    text-align: center;
+    padding: 2rem;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+}
+
+.products-empty p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .products-filters {
+        flex-direction: column;
+    }
+
+    .products-filter-group {
+        width: 100%;
+    }
+
+    .products-filter-group .form-input {
+        flex: 1;
+        min-width: unset;
+    }
+}

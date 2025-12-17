@@ -1,0 +1,83 @@
+.scent-radar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scent-radar--small {
+    width: 180px;
+}
+
+.scent-radar--medium {
+    width: 280px;
+}
+
+.scent-radar--large {
+    width: 400px;
+}
+
+.scent-tooltip {
+    background: rgba(26, 26, 37, 0.95);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    backdrop-filter: blur(10px);
+}
+
+.scent-tooltip-label {
+    font-size: 0.85rem;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.scent-tooltip-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.scent-radar-legend {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    width: 100%;
+}
+
+.scent-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+}
+
+.scent-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.scent-legend-label {
+    color: #a0a0b0;
+    flex: 1;
+}
+
+.scent-legend-value {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .scent-radar-legend {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

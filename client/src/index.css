@@ -1,0 +1,617 @@
+:root {
+  /* Color Palette */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f0f0f0;
+  --color-bg-tertiary: #e0e0e0;
+  --color-bg-card: #ffffff;
+  --color-bg-glass: #f9f9f9;
+
+  /* Accent Colors */
+  --color-accent-gold: #000000;
+  --color-accent-purple: #0000ee;
+  --color-accent-violet: #551a8b;
+  --color-accent-rose: #ff0000;
+  --color-accent-cyan: #008b8b;
+
+  /* Text Colors */
+  --color-text-primary: #000000;
+  --color-text-secondary: #444444;
+  --color-text-muted: #666666;
+
+  /* Gradients */
+  --gradient-gold: #e0e0e0;
+  --gradient-purple: #e0e0e0;
+  --gradient-card: #ffffff;
+  --gradient-hero: #ffffff;
+
+  /* Shadows */
+  --shadow-sm: none;
+  --shadow-md: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  --shadow-glow-gold: none;
+  --shadow-glow-purple: none;
+
+  /* System Fonts */
+  --font-display: sans-serif;
+  --font-body: sans-serif;
+
+  /* Spacing */
+  --space-xs: 5px;
+  --space-sm: 10px;
+  --space-md: 15px;
+  --space-lg: 20px;
+  --space-xl: 30px;
+  --space-2xl: 40px;
+  --space-3xl: 50px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-full: 4px;
+
+  /* Transitions */
+  --transition-fast: 0s;
+  --transition-normal: 0s;
+  --transition-slow: 0s;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+  background: white;
+  min-height: 100vh;
+}
+
+/* Removed Background Pattern */
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #eee;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid #999;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 1.2;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.text-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.text-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.text-subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.text-body {
+  font-size: 1rem;
+  color: #333;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.text-gradient {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: black;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 30px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Components - Buttons */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: normal;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #777;
+  background: #f0f0f0;
+  color: black;
+}
+
+.btn-primary {
+  background: #ddd;
+  color: black;
+  border: 1px solid #999;
+}
+
+.btn-primary:hover {
+  background: #ccc;
+}
+
+.btn-secondary {
+  background: white;
+  color: black;
+  border: 1px solid #999;
+}
+
+.btn-secondary:hover {
+  background: #f9f9f9;
+}
+
+.btn-outline {
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+.btn-outline:hover {
+  background: #f0f0f0;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+.btn-lg {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+}
+
+/* Components - Cards */
+.card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card:hover {
+  /* No hover effect */
+  transform: none;
+  box-shadow: none;
+}
+
+.card-image {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+  background: #eee;
+}
+
+.card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover .card-image img {
+  transform: none;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-bottom: 10px;
+}
+
+/* Components - Forms */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  background: white;
+  border: 1px solid #999;
+  border-radius: 2px;
+  color: black;
+}
+
+.form-input:focus {
+  outline: 1px solid blue;
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+/* Range Slider */
+.range-slider {
+  width: 100%;
+}
+
+/* Components - Tags & Badges */
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  border-radius: 2px;
+  background: #eee;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.tag-note {
+  background: #f0f0f0;
+  color: black;
+  border-color: #999;
+}
+
+.tag-note:hover {
+  background: #e0e0e0;
+}
+
+.tag-note.selected {
+  background: #ccc;
+  color: black;
+  font-weight: bold;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  font-size: 0.75rem;
+  border-radius: 10px;
+  background: #666;
+  color: white;
+}
+
+/* Components - Navigation */
+.navbar {
+  position: static;
+  /* No longer fixed */
+  padding: 15px 0;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: black;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: #555;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: black;
+  text-decoration: underline;
+}
+
+.nav-link::after {
+  content: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-btn {
+  position: relative;
+  padding: 5px;
+  color: black;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+/* Components - Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.modal-body {
+  padding: 15px;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+}
+
+.animate-fadeIn {
+  animation: none;
+}
+
+.animate-slideUp {
+  animation: none;
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-sm {
+  gap: 10px;
+}
+
+.gap-md {
+  gap: 15px;
+}
+
+.gap-lg {
+  gap: 20px;
+}
+
+.mt-sm {
+  margin-top: 10px;
+}
+
+.mt-md {
+  margin-top: 15px;
+}
+
+.mt-lg {
+  margin-top: 20px;
+}
+
+.mt-xl {
+  margin-top: 30px;
+}
+
+.mb-sm {
+  margin-bottom: 10px;
+}
+
+.mb-md {
+  margin-bottom: 15px;
+}
+
+.mb-lg {
+  margin-bottom: 20px;
+}
+
+.mb-xl {
+  margin-bottom: 30px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* Scrollbar - Standard */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+/* Page-specific */
+.main-content {
+  padding-top: 20px;
+  min-height: 100vh;
+}

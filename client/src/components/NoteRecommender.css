@@ -1,0 +1,108 @@
+.note-recommender {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.note-recommender-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.note-recommender-title {
+    font-family: sans-serif;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.note-recommender-subtitle {
+    font-size: 0.95rem;
+    color: #666666;
+}
+
+.note-recommender-selected {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.note-recommender-selected-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+.note-clear-btn {
+    background: none;
+    border: none;
+    color: #666666;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.note-clear-btn:hover {
+    color: #000000;
+}
+
+.note-tags-selected {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.note-search {
+    margin-bottom: 1.5rem;
+}
+
+.note-section {
+    margin-bottom: 1.5rem;
+}
+
+.note-section-title {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.note-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.note-tags-scrollable {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.note-tags-scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.note-tags-scrollable::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 3px;
+}
+
+.note-recommender-actions {
+    margin-top: 2rem;
+}
+
+.note-recommender-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
