@@ -78,7 +78,7 @@ const Profile = () => {
                                         <div className="order-items">
                                             {order.items.map((item, idx) => (
                                                 <div key={idx} className="order-item">
-                                                    <span>{item.quantity}x {item.fragrance?.name || 'Unknown Item'} ({item.type})</span>
+                                                    <span>{item.quantity}x {item.fragrance?.name || item.productName || 'Unknown Item'} ({item.type}{item.type === 'decant' ? ` - ${item.mlQuantity}ml` : ''})</span>
                                                     <span>${(item.priceAtPurchase * (item.type === 'decant' ? 1 : item.quantity)).toFixed(2)}</span>
                                                 </div>
                                             ))}

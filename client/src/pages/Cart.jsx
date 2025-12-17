@@ -52,7 +52,11 @@ const Cart = () => {
                     mlQuantity: item.mlQuantity,
                     priceAtPurchase: item.type === 'bottle'
                         ? item.price.bottle
-                        : item.price.perMl * item.mlQuantity
+                        : item.price.perMl * item.mlQuantity,
+                    // Snapshot data
+                    productName: item.name,
+                    brand: item.brand,
+                    productImage: item.imageUrl
                 })),
                 shippingAddress: {
                     name: formData.name,

@@ -23,7 +23,10 @@ const orderItemSchema = new mongoose.Schema({
     priceAtPurchase: {
         type: Number,
         required: true
-    }
+    },
+    productName: String,
+    brand: String,
+    productImage: String
 });
 
 const orderSchema = new mongoose.Schema({
