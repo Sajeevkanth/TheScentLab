@@ -1,4 +1,5 @@
 const UserDAO = require('../dao/UserDAO');
+const bcrypt = require('bcryptjs');
 
 /**
  * Controller for User operations
@@ -31,8 +32,10 @@ const userController = {
                 return res.status(400).json({ error: 'Email already registered' });
             }
 
-            // In production, hash the password!
-            const user = await UserDAO.create({ email, password, name });
+            // Hash password
+            const hashedPassword = await bcrypt.hash(password, 10);
+
+            const user = await UserDAO.create({ email, password: hashedPassword, name });
             const { password: _, ...userData } = user.toObject();
 
             res.status(201).json(userData);
@@ -47,7 +50,13 @@ const userController = {
             const { email, password } = req.body;
 
             const user = await UserDAO.findByEmail(email);
-            if (!user || user.password !== password) {
+            if (!user) {
+                return res.status(401).json({ error: 'Invalid credentials' });
+            }
+
+            // Verify password
+            const isMatch = await bcrypt.compare(password, user.password);
+            if (!isMatch) {
                 return res.status(401).json({ error: 'Invalid credentials' });
             }
 

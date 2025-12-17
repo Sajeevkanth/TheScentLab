@@ -5,6 +5,8 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const Fragrance = require('./models/Fragrance');
+const User = require('./models/User');
+const bcrypt = require('bcryptjs');
 
 const fragrances = [
     {
@@ -195,6 +197,23 @@ async function seedDatabase() {
         console.log('\n✅ Database seeded successfully!');
         console.log('Sample fragrances added:');
         result.forEach(f => console.log(`  - ${f.brand} ${f.name}`));
+
+        // Seed Admin User
+        const adminEmail = 'admin@thescentlab.com';
+        const existingAdmin = await User.findOne({ email: adminEmail });
+
+        if (!existingAdmin) {
+            const hashedPassword = await bcrypt.hash('admin123', 10);
+            await User.create({
+                name: 'Admin User',
+                email: adminEmail,
+                password: hashedPassword,
+                role: 'admin'
+            });
+            console.log('✅ Admin user created (admin@thescentlab.com / admin123)');
+        } else {
+            console.log('ℹ️ Admin user already exists');
+        }
 
     } catch (error) {
         console.error('Error seeding database:', error);

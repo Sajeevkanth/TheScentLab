@@ -22,7 +22,7 @@ const Recommend = () => {
                         <span className="text-gradient">Note Similarity Engine</span>
                     </h1>
                     <p className="recommend-subtitle">
-                        Powered by Jaccard similarity algorithm to find fragrances that match your preferences
+                        Powered by our smart matching engine to find fragrances that match your preferences
                     </p>
                 </div>
 

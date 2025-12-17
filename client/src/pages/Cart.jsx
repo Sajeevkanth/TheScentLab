@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../services/CartContext';
+import { useAuth } from '../services/AuthContext';
 import { orderAPI } from '../services/api';
 import './Cart.css';
 
 const Cart = () => {
     const { cart, cartTotal, removeFromCart, updateQuantity, clearCart } = useCart();
+    const { user } = useAuth();
     const [isCheckingOut, setIsCheckingOut] = useState(false);
     const [orderComplete, setOrderComplete] = useState(false);
     const [formData, setFormData] = useState({
@@ -16,6 +18,17 @@ const Cart = () => {
         state: '',
         zip: ''
     });
+
+    // Pre-fill form with user data
+    useEffect(() => {
+        if (user) {
+            setFormData(prev => ({
+                ...prev,
+                name: user.name || '',
+                email: user.email || ''
+            }));
+        }
+    }, [user]);
 
     const handleInputChange = (e) => {
         setFormData({
@@ -30,6 +43,7 @@ const Cart = () => {
 
         try {
             const orderData = {
+                user: user?._id,
                 guestEmail: formData.email,
                 items: cart.map(item => ({
                     fragrance: item.fragranceId,
@@ -38,7 +52,11 @@ const Cart = () => {
                     mlQuantity: item.mlQuantity,
                     priceAtPurchase: item.type === 'bottle'
                         ? item.price.bottle
-                        : item.price.perMl * item.mlQuantity
+                        : item.price.perMl * item.mlQuantity,
+                    // Snapshot data
+                    productName: item.name,
+                    brand: item.brand,
+                    productImage: item.imageUrl
                 })),
                 shippingAddress: {
                     name: formData.name,
@@ -81,9 +99,7 @@ const Cart = () => {
                         <div className="order-complete-icon">✓</div>
                         <h1>Order Confirmed!</h1>
                         <p>Thank you for your purchase. Your fragrances are on their way!</p>
-                        <p className="order-note">
-                            The Smart Decant System has automatically updated our inventory.
-                        </p>
+
                         <Link to="/products" className="btn btn-primary btn-lg">
                             Continue Shopping
                         </Link>

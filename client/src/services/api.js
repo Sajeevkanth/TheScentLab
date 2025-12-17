@@ -23,6 +23,15 @@ export const fragranceAPI = {
     // Get single fragrance by ID
     getById: (id) => api.get(`/fragrances/${id}`),
 
+    // Update fragrance
+    update: (id, data) => api.put(`/fragrances/${id}`, data),
+
+    // Create fragrance
+    create: (data) => api.post('/fragrances', data),
+
+    // Delete fragrance
+    delete: (id) => api.delete(`/fragrances/${id}`),
+
     // Search fragrances
     search: (query) => api.get(`/fragrances/search?q=${encodeURIComponent(query)}`),
 
@@ -45,6 +54,7 @@ export const fragranceAPI = {
 
 // Order API
 export const orderAPI = {
+    getAllOrders: () => api.get('/orders'),
     create: (orderData) => api.post('/orders', orderData),
     getById: (id) => api.get(`/orders/${id}`),
     getByUser: (userId) => api.get(`/orders/user/${userId}`)

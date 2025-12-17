@@ -6,26 +6,43 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Recommend from './pages/Recommend';
 import Cart from './pages/Cart';
+import { AuthProvider } from './services/AuthContext';
 import { CartProvider } from './services/CartContext';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
+
+import AdminDashboard from './pages/AdminDashboard';
+import AdminRoute from './components/AdminRoute';
 
 function App() {
     return (
-        <CartProvider>
-            <Router>
-                <div className="app">
-                    <Navbar />
-                    <main className="main-content">
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/products" element={<Products />} />
-                            <Route path="/products/:id" element={<ProductDetail />} />
-                            <Route path="/recommend" element={<Recommend />} />
-                            <Route path="/cart" element={<Cart />} />
-                        </Routes>
-                    </main>
-                </div>
-            </Router>
-        </CartProvider>
+        <AuthProvider>
+            <CartProvider>
+                <Router>
+                    <div className="app">
+                        <Navbar />
+                        <main className="main-content">
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/products" element={<Products />} />
+                                <Route path="/products/:id" element={<ProductDetail />} />
+                                <Route path="/recommend" element={<Recommend />} />
+                                <Route path="/cart" element={<Cart />} />
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/register" element={<Register />} />
+                                <Route path="/profile" element={<Profile />} />
+                                <Route path="/admin" element={
+                                    <AdminRoute>
+                                        <AdminDashboard />
+                                    </AdminRoute>
+                                } />
+                            </Routes>
+                        </main>
+                    </div>
+                </Router>
+            </CartProvider>
+        </AuthProvider>
     );
 }
 
