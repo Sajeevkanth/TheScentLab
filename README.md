@@ -9,16 +9,15 @@ The Scent Lab is a modern MERN stack application designed to solve the blind buy
 ### Client / Marketplace
 - **Smart Decant Inventory**: Browse and purchase fragrances in various sizes (decants vs. full bottles).
 - **Visual Scent Search**: Interactive Radar Charts (Recharts) visualizing scent profiles (e.g., Woody, Floral, Spicy).
-- **Note Similarity Engine**: Intelligent recommendation system using Jaccard similarity to suggest perfumes based on note overlap.
-- **User Authentication**: Secure Login/Register flows using JWT.
-- **Cart & Checkout**: Persistent cart management and secure checkout process.
+- **Note Similarity Engine**: Recommendation system using Jaccard similarity to suggest perfumes based on note overlap.
+- **User Authentication**: Secure Login/Register using JWT.
 - **Profile Management**: User dashboards to track order history and preferences.
 
 ### Admin Dashboard
 - **Product Management**: CRUD operations for inventory.
 - **Order Tracking**: Monitor and update order status.
 - **Analytics**: Basic insights into sales and inventory levels.
-
+  
 ---
 
 ## Tech Stack
@@ -83,9 +82,6 @@ npm start
 ```
 
 ---
-
-## Screenshots
-
 
 ## Roadmap
 
