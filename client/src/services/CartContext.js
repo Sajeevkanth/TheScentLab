@@ -20,7 +20,7 @@ const cartReducer = (state, action) => {
 
     switch (action.type) {
         case 'ADD_ITEM':
-            // Check for existing item
+            // Check if item already exists (same fragrance + same type + same ml for decants)
             const existingIndex = state.findIndex(item =>
                 item.fragranceId === action.payload.fragranceId &&
                 item.type === action.payload.type &&
