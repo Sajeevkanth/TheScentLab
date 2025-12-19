@@ -17,7 +17,7 @@ The Scent Lab is a modern MERN stack application designed to solve the blind buy
 - **Product Management**: CRUD operations for inventory.
 - **Order Tracking**: Monitor and update order status.
 - **Analytics**: Basic insights into sales and inventory levels.
-  
+
 ---
 
 ## Tech Stack
@@ -80,6 +80,10 @@ cd client
 npm start
 # Client runs on http://localhost:3000
 ```
+### 5. Accessing the Admin Dashboard
+Once the application is running and the database is seeded, you can log in with the default admin login:
+- **Email**: `admin@thescentlab.com`
+- **Password**: `admin123`
 
 ---
 
