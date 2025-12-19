@@ -41,7 +41,7 @@ const Home = () => {
                         </h1>
                         <p className="hero-subtitle animate-slideUp">
                             Discover fragrances through visual profiles, smart sampling,
-                            and AI-powered recommendations. Never blind buy again.
+                            and smart recommendations. Never blind buy again.
                         </p>
                         <div className="hero-actions animate-slideUp">
                             <Link to="/products" className="btn btn-primary btn-lg">
@@ -90,7 +90,7 @@ const Home = () => {
                             <div className="feature-icon">🎯</div>
                             <h3 className="feature-title">Note Matching</h3>
                             <p className="feature-description">
-                                Tell us the notes you love, and our AI recommends
+                                Tell us the notes you love, and our smart system recommends
                                 fragrances that match your preferences.
                             </p>
                         </div>
