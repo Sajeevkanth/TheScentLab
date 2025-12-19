@@ -27,6 +27,7 @@ The Scent Lab is a modern MERN stack application designed to solve the blind buy
 - **Backend**: Node.js, Express.js, RESTful API architecture.
 - **Database**: MongoDB (Mongoose ODM).
 - **Authentication**: JSON Web Tokens (JWT), Bcrypt.js.
+- **Code Quality**: ESLint, Prettier (enforced style guide for clean, consistent code).
 
 ---
 
@@ -81,6 +82,12 @@ cd client
 npm start
 # Client runs on http://localhost:3000
 ```
+
+### 5. Accessing the Admin Dashboard
+Once the application is running and the database is seeded, you can log in with the default admin credentials:
+
+- **Email**: `admin@thescentlab.com`
+- **Password**: `admin123`
 
 ---
 
