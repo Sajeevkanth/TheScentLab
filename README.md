@@ -27,10 +27,11 @@ The Scent Lab is a modern MERN stack application designed to solve the blind buy
 - **Backend**: Node.js, Express.js, RESTful API architecture.
 - **Database**: MongoDB (Mongoose ODM).
 - **Authentication**: JSON Web Tokens (JWT), Bcrypt.js.
+- **Code Quality**: ESLint, Prettier.
 
 ---
 
-## Installation & Getting Started
+## Installation
 
 Follow these steps to set up the project locally.
 
