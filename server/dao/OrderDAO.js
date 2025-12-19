@@ -29,7 +29,7 @@ class OrderDAO {
      * Create order with automatic inventory deduction
      */
     async create(orderData) {
-        // Process each item and deduct inventory
+        // Process each item and remove inventory
         for (const item of orderData.items) {
             const quantity = item.type === 'decant' ? (item.mlQuantity * item.quantity) : item.quantity;
 
@@ -58,7 +58,6 @@ class OrderDAO {
     }
 
     async cancel(id) {
-        // Note: In a real app, you might want to restore inventory on cancellation
         return await Order.findByIdAndUpdate(
             id,
             { status: 'cancelled' },

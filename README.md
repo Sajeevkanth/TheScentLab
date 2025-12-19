@@ -1,6 +1,7 @@
 # The Scent Lab
 
 The Scent Lab is a modern MERN stack application designed to solve the blind buy problem when buying fragrances. By using visual data representation (Radar Charts) and similarity algorithms, it provides users with insights into fragrance notes, allowing for more informed purchasing decisions. It features a full-featured e-commerce platform for purchasing decants (samples) and full bottles.
+![](https://github.com/Sajeevkanth/TheScentLab/blob/main/Homepage.png?raw=true)
 
 ---
 
@@ -9,9 +10,8 @@ The Scent Lab is a modern MERN stack application designed to solve the blind buy
 ### Client / Marketplace
 - **Smart Decant Inventory**: Browse and purchase fragrances in various sizes (decants vs. full bottles).
 - **Visual Scent Search**: Interactive Radar Charts (Recharts) visualizing scent profiles (e.g., Woody, Floral, Spicy).
-- **Note Similarity Engine**: Intelligent recommendation system using Jaccard similarity to suggest perfumes based on note overlap.
-- **User Authentication**: Secure Login/Register flows using JWT.
-- **Cart & Checkout**: Persistent cart management and secure checkout process.
+- **Note Similarity Engine**: Recommendation system using Jaccard similarity to suggest perfumes based on note overlap.
+- **User Authentication**: Secure Login/Register using JWT.
 - **Profile Management**: User dashboards to track order history and preferences.
 
 ### Admin Dashboard
@@ -31,13 +31,13 @@ The Scent Lab is a modern MERN stack application designed to solve the blind buy
 
 ---
 
-## Installation & Getting Started
+## Installation
 
 Follow these steps to set up the project locally.
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v16+)
-- [MongoDB](https://www.mongodb.com/) (Local or Atlas URI)
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/) (Local or Atlas)
 
 ### 1. Clone the Repository
 ```bash
@@ -82,17 +82,12 @@ cd client
 npm start
 # Client runs on http://localhost:3000
 ```
-
 ### 5. Accessing the Admin Dashboard
-Once the application is running and the database is seeded, you can log in with the default admin credentials:
-
+Log in with the default admin:
 - **Email**: `admin@thescentlab.com`
 - **Password**: `admin123`
 
 ---
-
-## Screenshots
-
 
 ## Roadmap
 
