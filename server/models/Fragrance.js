@@ -54,7 +54,7 @@ const fragranceSchema = new mongoose.Schema({
     },
     concentration: {
         type: String,
-        enum: ['EDT', 'EDP', 'Parfum', 'Cologne'],
+        enum: ['EDT', 'EDP', 'Parfum', 'Cologne', 'Extrait'],
         default: 'EDP'
     },
     year: Number,
