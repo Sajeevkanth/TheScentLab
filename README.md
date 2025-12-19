@@ -27,7 +27,7 @@ The Scent Lab is a modern MERN stack application designed to solve the blind buy
 - **Backend**: Node.js, Express.js, RESTful API architecture.
 - **Database**: MongoDB (Mongoose ODM).
 - **Authentication**: JSON Web Tokens (JWT), Bcrypt.js.
-- **Code Quality**: ESLint, Prettier.
+- **Code Quality**: ESLint, Prettier (enforced style guide for clean, consistent code).
 
 ---
 
@@ -36,8 +36,8 @@ The Scent Lab is a modern MERN stack application designed to solve the blind buy
 Follow these steps to set up the project locally.
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v16+)
-- [MongoDB](https://www.mongodb.com/) (Local or Atlas URI)
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/) (Local or Atlas)
 
 ### 1. Clone the Repository
 ```bash
@@ -83,7 +83,7 @@ npm start
 # Client runs on http://localhost:3000
 ```
 ### 5. Accessing the Admin Dashboard
-Once the application is running and the database is seeded, you can log in with the default admin login:
+Log in with the default admin:
 - **Email**: `admin@thescentlab.com`
 - **Password**: `admin123`
 
