@@ -1,6 +1,7 @@
 # The Scent Lab
 
 The Scent Lab is a modern MERN stack application designed to solve the blind buy problem when buying fragrances. By using visual data representation (Radar Charts) and similarity algorithms, it provides users with insights into fragrance notes, allowing for more informed purchasing decisions. It features a full-featured e-commerce platform for purchasing decants (samples) and full bottles.
+![](https://github.com/Sajeevkanth/TheScentLab/blob/main/Homepage.png?raw=true)
 
 ---
 
