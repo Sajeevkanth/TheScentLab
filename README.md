@@ -4,7 +4,7 @@ The Scent Lab is a modern MERN stack application designed to solve the blind buy
 ![](https://github.com/Sajeevkanth/TheScentLab/blob/main/Homepage.png?raw=true)
 
 ## Live Demo
-Website link: [https://thescentlab.netlify.app/](https://thescentlab.netlify.app/)
+Website link: [https://thescentlab.netlify.app/](https://thescentlab.netlify.app/) 
 Frontend hosted on Netlify and backend hosted on Render
 
 ---
