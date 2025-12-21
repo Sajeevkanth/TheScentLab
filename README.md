@@ -31,7 +31,7 @@ Frontend hosted on Netlify and backend hosted on Render
 - **Backend**: Node.js, Express.js, RESTful API architecture.
 - **Database**: MongoDB (Mongoose ODM).
 - **Authentication**: JSON Web Tokens (JWT), Bcrypt.js.
-- **Code Quality**: ESLint, Prettier (enforced style guide for clean, consistent code).
+- **Code Quality**: ESLint, Prettier.
 
 ---
 
