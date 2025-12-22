@@ -71,10 +71,11 @@ npm install
 ```
 
 ### 4. Running the Application
-
+To populate the database with initial products, run seed.js from the `server` directory.
 **Run backend (Terminal 1):**
 ```bash
 cd server
+node seed.js
 npm run dev
 # Server runs on http://localhost:5000
 ```
